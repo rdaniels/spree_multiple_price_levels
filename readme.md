@@ -7,7 +7,7 @@ Introduction goes here.
 
 1. Add this extension to your Gemfile with this line:
   ```ruby
-  gem 'spree_multiple_price_levels', github: '[your-github-handle]/spree_multiple_price_levels'
+  gem 'spree_multiple_price_levels', github: 'rdaniels/spree_multiple_price_levels'
   ```
 
 2. Install the gem using Bundler:
