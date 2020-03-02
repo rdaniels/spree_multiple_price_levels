@@ -1,0 +1,31 @@
+<div data-hook="admin_product_form_sale_price" class="alpha two columns">
+    <%= f.field_container :sale_price, class: ['form-group'] do %>
+        <%= f.label :sale_price, Spree.t(:sale_price) %>
+        <%= f.text_field :sale_price, value: number_to_currency(@product.sale_price, unit: ''), class: 'form-control' %>
+        <%= f.error_message_on :sale_price %>
+    <% end %>
+</div>
+<div data-hook="admin_product_form_wholesale_price" class="alpha two columns">
+    <%= f.field_container :wholesale_price, class: ['form-group'] do %>
+        <%= f.label :wholesale_price, Spree.t(:wholesale_price) %>
+        <%= f.text_field :wholesale_price, value: number_to_currency(@product.wholesale_price, unit: ''), class: 'form-control' %>
+        <%= f.error_message_on :wholesale_price %>
+    <% end %>
+</div>
+<div data-hook="admin_product_form_distributor_price" class="alpha two columns">
+    <%= f.field_container :distributor_price, class: ['form-group'] do %>
+        <%= f.label :distributor_price, Spree.t(:distributor_price) %>
+        <%= f.text_field :distributor_price, value: number_to_currency(@product.distributor_price, unit: ''), class: 'form-control' %>
+        <%= f.error_message_on :distributor_price %>
+    <% end %>
+</div>
+
+<% if Spree::Variant.method_defined? :dealer_price %>
+    <div data-hook="admin_product_form_dealer_price" class="alpha two columns">
+        <%= f.field_container :dealer_price, class: ['form-group'] do %>
+            <%= f.label :dealer_price, Spree.t(:dealer_price) %>
+            <%= f.text_field :dealer_price, value: number_to_currency(@product.dealer_price, unit: ''), class: 'form-control' %>
+            <%= f.error_message_on :dealer_price %>
+        <% end %>
+    </div>
+<% end %>

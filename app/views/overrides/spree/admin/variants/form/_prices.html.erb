@@ -1,0 +1,19 @@
+<div class="form-group" data-hook="price">
+    <%= f.label :sale_price, Spree.t(:sale_price) %>
+    <%= f.text_field :sale_price, value: number_to_currency(@variant.sale_price, unit: ''), class: 'form-control' %>
+</div>
+<div class="form-group" data-hook="price">
+    <%= f.label :wholesale_price, Spree.t(:wholesale_price) %>
+    <%= f.text_field :wholesale_price, value: number_to_currency(@variant.wholesale_price, unit: ''), class: 'form-control' %>
+</div>
+<div class="form-group" data-hook="price">
+    <%= f.label :distributor_price, Spree.t(:distributor_price) %>
+    <%= f.text_field :distributor_price, value: number_to_currency(@variant.distributor_price, unit: ''), class: 'form-control' %>
+</div>
+
+<% if Spree::Variant.method_defined? :dealer_price %>
+    <div class="form-group" data-hook="price">
+        <%= f.label :dealer_price, Spree.t(:dealer_price) %>
+        <%= f.text_field :dealer_price, value: number_to_currency(@variant.dealer_price, unit: ''), class: 'form-control' %>
+    </div>
+<% end %>
